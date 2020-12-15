@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}
+Staff page
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="myd">
+    <form class="montform" id="reused_form">
+
+        <center>
+            <img src="{% static 'Profiler1/avatar1.png' %}" alt="Profile Picture" class="image"
+                 style="max-height: 50%; max-width: 50%;">
+        </center>
+
+
+        <br>
+        <br>
+        <span class="tex">
+                    Name: &nbsp;&nbsp;  {{staff.fname}} &nbsp;&nbsp; &nbsp; {{staff.lname}}
+                	</span>
+        <br>
+        <br>
+
+        <br>
+    </form>
+    <br>
+    <br>
+
+    <label for="courses"><span class="tex">TRANSACTIONS :</span></label>
+    <form name='opts' id='courses' action="{% url 'tes2' staff.regNo  %}" method="POST"> {% csrf_token %}
+        <br>
+        <br>
+
+        <button type="submit" name="fresh" value="fresh" class="button-blue">Student offering first time</button>
+        <br>
+        <br>
+        <button type="submit" name="cov" value="cov" class="button-blue">Carry Over Students</button>
+        <br>
+        <br>
+        <button type="submit" name="profile" value="profile" class="button-blue">Profile</button>
+        <br>
+        <br>
+    </form>
+
+</div>
+
+{% endblock %}
+
+

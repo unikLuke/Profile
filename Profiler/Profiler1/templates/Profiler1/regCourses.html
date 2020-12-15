@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}
+Registered Courses
+{% endblock %}
+{% block content %}
+{% load static %}
+<br>
+<br>
+<br>
+<div class="container">
+    <div id="form-main">
+        <div id="form-div">
+            <form class="montform" id="reused_form" action='{% url "registered-courses" who %}' method="POST"> {%
+                csrf_token %}
+
+                Who : &nbsp; {{who}}
+                {% for i in range %}
+
+                <div class="submit">
+                    <button type="submit" class="button-blue" name="level" value="{{i}}">{{i}} Level Registered
+                        Courses
+                    </button>
+                </div>
+                <br>
+                {% endfor %}
+                <!-- <div class="submit">
+                     <button type="submit" class="button-blue" name="level100" value="level100">100 Level Registered Courses</button>
+                 </div>
+                 <br>
+                 <div class="submit">
+                     <button type="submit" class="button-blue" name="level200" value="level200">200 Level Registered Courses</button>
+                 </div>
+
+                 <div class="submit">
+                     <button type="submit" class="button-blue" name="level300" value="level300">300 Level Registered Courses</button>
+                 </div>
+                 <br>
+                 <div class="submit">
+                     <button type="submit" class="button-blue" name="level400" value="level400">400 Level Registered Courses</button>
+                 </div>
+                 <br>-->
+                <!-- <div class="submit">
+                   <button type="submit" class="button-blue" name="level500" value="level500">500 Level Registered Courses</button>
+               </div> -->
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+

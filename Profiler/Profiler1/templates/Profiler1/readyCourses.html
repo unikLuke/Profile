@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}
+Staff page
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="myd">
+    <form class="montform" id="reused_form">
+
+        <center>
+            <img src="{% static 'Profiler1/avatar1.png' %}" alt="Profile Picture" class="image"
+                 style="max-height: 50%; max-width: 50%;">
+        </center>
+
+
+        <br>
+        <br>
+        <span class="tex">
+                    Name: &nbsp;&nbsp;  {{student.fname}} &nbsp;&nbsp; &nbsp; {{student.lname}}
+                	</span>
+        <br>
+        <br>
+        <span class="tex">
+
+                    Faculty:&nbsp;&nbsp;{{student.faculty}}
+                    </span>
+        <br>
+        <br>
+
+        <span class="tex">
+
+                    Department:&nbsp;&nbsp;{{student.department}}
+                    </span>
+        <br>
+        <br>
+
+        <span class="tex">
+                    Level:&nbsp;&nbsp;{{student.level}}
+                    </span>
+        <br>
+    </form>
+    <center>
+        <h1>
+            <h1>{{level}} Registered Courses </h1>
+
+        </h1>
+    </center>
+
+    <table>
+        <thead>
+        <tr class="table100-head">
+            <th class="column5">Status</th>
+            <th class="column1">CourseName</th>
+            <th class="column2">Units</th>
+            <th class="column3">Level</th>
+            <th class="column4">Description</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for course in courses %}
+        {% if course|length > 1 %}
+
+        <tr>
+            <td class="column5">
+                <center>
+                    <input type="checkbox" name="hi" value="hi" checked disabled>
+                </center>
+            </td>
+            <td class="column1">{{course.0}}</td>
+            <td class="column2">{{course.1}}</td>
+            <td class="column3">{{course.2}}</td>
+            <td class="column4">{{course.3}}</td>
+
+        </tr>
+        {% endif %}
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+</div>
+
+{% endblock %}
+
+
+

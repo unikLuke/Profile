@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}
+Staff page
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="myd">
+    <form class="montform" id="reused_form">
+
+        <center>
+            <img src="{% static 'Profiler1/avatar1.png' %}" alt="Profile Picture" class="image"
+                 style="max-height: 50%; max-width: 50%;">
+        </center>
+
+
+        <br>
+        <br>
+        <span class="tex">
+                    Name: &nbsp;&nbsp;  {{student.fname}} &nbsp;&nbsp; &nbsp; {{student.lname}}
+                	</span>
+        <br>
+        <br>
+        <span class="tex">
+
+                    Faculty:&nbsp;&nbsp;{{student.faculty}}
+                    </span>
+        <br>
+        <br>
+
+        <span class="tex">
+
+                    Department:&nbsp;&nbsp;{{student.department}}
+                    </span>
+        <br>
+        <br>
+
+        <span class="tex">
+                    Level:&nbsp;&nbsp;{{student.level}}
+                    </span>
+        <br>
+    </form>
+    <br>
+    <br>
+
+    <label for="courses"><span class="tex">TRANSACTIONS :</span></label>
+    <form name='opts' id='courses' action="{% url 'tes' student.regNo  %}" method="POST"> {% csrf_token %}
+        <br>
+        <br>
+
+        <button type="submit" name="register" value="register" class="button-blue">Register Course</button>
+        <br>
+        <br>
+        <button type="submit" name="registered" value="registered" class="button-blue">Registered Courses</button>
+        <br>
+        <br>
+        <button type="submit" name="profile" value="profile" class="button-blue">Profile</button>
+        <br>
+        <br>
+    </form>
+
+</div>
+
+{% endblock %}
+
+
+

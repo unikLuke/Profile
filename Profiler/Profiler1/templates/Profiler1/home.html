@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <title>Registration form
+    </title>
+    <link rel="stylesheet" href="{% static 'Profiler1/form.css' %}">
+
+</head>
+<body>
+<div class="container">
+    <div id="form-main">
+        <div id="form-div">
+            <form class="montform" id="reused_form" name="form" action='{% url "home_view" %}' method="POST"> {%
+                csrf_token %}
+                <br>
+                <strong>
+                    Registration Form
+                </strong>
+                <br>
+                <p class="name">
+                    <input name="name" type="text" class="feedback-input" required placeholder="Name" id="name"/>
+                </p>
+                <p class="name">
+                    <input name="password" type="password" class="feedback-input" required placeholder="Your Password"
+                           id="password"/>
+                </p>
+                <p class="email">
+                    <input name="email" type="email" required class="feedback-input" id="email" placeholder="Email"/>
+                </p>
+
+                <span class="feedback-input">Profile Picture:</span> <input name="ufile" type="file"
+                                                                            class="feedback-input" max="200kb"
+                                                                            required/>
+
+                <div class="submit">
+                    <button type="submit" class="button-blue">Register</button>
+                    <div class="ease"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

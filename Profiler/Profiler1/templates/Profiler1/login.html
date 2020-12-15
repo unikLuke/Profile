@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <title>Login Form
+    </title>
+    <link rel="stylesheet" href="{% static 'Profiler1/form.css' %}">
+
+</head>
+<body>
+<div class="container">
+    <div id="form-main">
+        <div id="form-div">
+            <form class="montform" id="form1" action='{% url "tesst" %}' method="POST"> {% csrf_token %}
+                <br>
+                {{text}}
+                <br>
+                <p class="name">
+
+                    <input name="RegNo" type="text" class="feedback-input" required placeholder="Your RegNo" id="name"/>
+
+                </p>
+                <p class="name">
+                    <input name="password" type="password" class="feedback-input" required placeholder="Your Password"
+                           id="password"/>
+                </p>
+
+                <div class="submit">
+                    <button type="submit" class="button-blue">Log in</button>
+                    <div class="ease"></div>
+                </div>
+                <br>
+                <div class="submit">
+                    <a href="register" target="_self" class="link">
+                        <button type="button">
+                            <strong>Register</strong></button>
+                    </a>
+                </div>
+                <br>
+
+                <div class="submit">
+                    <a href="chpass" target="_self" class="link">
+                        <button type="button">
+                            <strong>Change Password</strong></button>
+                    </a>
+                </div>
+                <br>
+                <div class="submit">
+                    <a href="passrec" target="_self" class="link">
+                        <button type="button">
+                            <strong>Forgot Password?</strong></button>
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

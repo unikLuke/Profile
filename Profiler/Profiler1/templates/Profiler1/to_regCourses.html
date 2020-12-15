@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+Registered Courses
+{% endblock %}
+{% block content %}
+{% load static %}
+<br>
+<br>
+<br>
+<div class="container">
+    <div id="form-main">
+        <div id="form-div">
+            <form class="montform" id="reused_form" action='{% url "register-courses" who %}' method="POST"> {%
+                csrf_token %}
+
+                Who : &nbsp; {{who}}
+                {% for i in range %}
+
+                <div class="submit">
+                    <button type="submit" class="button-blue" name="level" value="{{i}}"> &nbsp; Register {{i}} Level
+                        Courses
+                    </button>
+                </div>
+                <br>
+                {% endfor %}
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

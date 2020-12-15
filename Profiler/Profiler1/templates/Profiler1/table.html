@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}
+Courses
+{% endblock %}
+{% block content %}
+{% load static %}
+
+
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
+                <br>
+                <br>
+                <center>
+                    <h1>
+
+                        <h1> Select your courses</h1>
+
+                    </h1>
+                </center>
+                <form name="form" method="post" action="{% url 'register' person level %}">
+                    {% csrf_token %}
+                    <table>
+                        <thead>
+                        <tr class="table100-head">
+                            <th class="column1">CourseName</th>
+                            <th class="column2">Units</th>
+                            <th class="column3">Level</th>
+                            <th class="column4">Description</th>
+                            <th class="column5">Select</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for course in courses %}
+
+                        <tr>
+                            <td class="column1">{{course.cName}}</td>
+                            <td class="column2">{{course.cUnits}}</td>
+                            <td class="column3">{{course.cLevel}}</td>
+                            <td class="column4">{{course.cDescrp}}</td>
+                            <td class="column5">
+                                <center>
+                                    <input type="checkbox" name="{{course.cName}}" value="{{course.cName}}">
+                                </center>
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                    <center>
+                        <button type="submit">Submit and save</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
